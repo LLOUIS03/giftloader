@@ -1,0 +1,100 @@
+.lightbox {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 0 15px;
+}
+
+.lightbox.open {
+  display: flex;
+}
+
+.lightbox .lightbox-img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 500px;
+  padding: 40px 0;
+  animation: lightImage 0.5s ease;
+}
+
+@keyframes lightImage {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.lightbox .lightbox-content {
+  position: relative;
+}
+
+.lightbox .lightbox-close {
+  position: absolute;
+  z-index: 101;
+  right: 0;
+  height: 40px;
+  width: 40px;
+  top: 0;
+  text-align: center;
+  line-height: 40px;
+  color: #ffffff;
+  cursor: zoom-out;
+  font-size: 25px;
+}
+
+.lightbox .lightbox-content {
+  position: relative;
+}
+
+.lightbox .lightbox-caption {
+  color: #ffffff;
+  font-size: 16px;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  z-index: -1;
+}
+
+.lightbox .lightbox-controls div {
+  position: absolute;
+  top: 50%;
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  line-height: 40px;
+  font-size: 20px;
+  font-weight: 400;
+  margin-top: -20px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  background-color: #ccc;
+  transition: all 0.2s ease;
+}
+
+.lightbox .lightbox-controls div:hover {
+  background-color: #ffffff;
+}
+
+.lightbox .lightbox-controls div.prev {
+  left: 30px;
+}
+
+.lightbox .lightbox-controls div.next {
+  right: 30px;
+}
